@@ -3,6 +3,7 @@ import store from "../counterStore";
 // const Counter1 = ({ count, setCount }) => {
 const Counter1 = () => {
   const count = store.getState().count;
+  console.log("count from Counter1 Component :", count);
   const incrementCount = () => {
     console.log("incrementCount");
     store.dispatch();
