@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import store from "../counterStore";
 // const Counter1 = ({ count, setCount }) => {
 const Counter1 = () => {
@@ -10,9 +10,16 @@ const Counter1 = () => {
     console.log("incrementCount");
     store.dispatch();
     // setCountState(store.getState().count);
-    let newCount = store.getState().count;
-    document.getElementById("count1").innerText = `Count : ${newCount}`;
+    // let newCount = store.getState().count;
+    // document.getElementById("count1").innerText = `Count : ${newCount}`;
   };
+
+  useEffect(() => {
+    store.subscribe(() => {
+      let newCount = store.getState().count;
+      document.getElementById("count1").innerText = `Count : ${newCount}`;
+    });
+  }, []);
   return (
     <div>
       <h2 id="count1">Count : {count}</h2>
