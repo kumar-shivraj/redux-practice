@@ -5,8 +5,8 @@ import Counter1 from "./Counter1";
 const Counter = () => {
   return (
     <div>
-      <Counter2 />
       <Counter1 />
+      <Counter2 />
     </div>
   );
 };
